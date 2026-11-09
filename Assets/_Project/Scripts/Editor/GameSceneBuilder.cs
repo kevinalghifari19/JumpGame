@@ -323,6 +323,12 @@ namespace JumpUp.EditorTools
             light2d.color = Color.white;
             light2d.intensity = 1.0f;
 
+            // 2b. Background Night Sky
+            GameObject bgObj = new GameObject("Background_NightSky");
+            SpriteRenderer bgSr = bgObj.AddComponent<SpriteRenderer>();
+            bgSr.sprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/_Project/Sprites/Background/Background_NightSky.png");
+            bgSr.sortingOrder = -100;
+
             // 3. Player Instance
             GameObject playerObj = (GameObject)PrefabUtility.InstantiatePrefab(playerPrefab);
             playerObj.name = "Player";
